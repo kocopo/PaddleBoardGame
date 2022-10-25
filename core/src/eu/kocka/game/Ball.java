@@ -37,9 +37,13 @@ public class Ball extends Circle {
     public void checkPaddleCollision(Paddle paddle){
         if(Intersector.overlaps(this, paddle)){
             ySpeed = -ySpeed;
-            xSpeed = (xSpeed > 0 ? 1 : -1) * maxXSpeed * paddle.normalize(getCollisionX(paddle));
+            xSpeed = getXDirection(getCollisionX(paddle), paddle) * maxXSpeed * paddle.normalize(getCollisionX(paddle));
             y = paddle.y + paddle.height + radius;
         }
+    }
+
+    private int getXDirection(float collisionX, Paddle paddle) {
+        return collisionX > paddle.width / 2 ? 1 : -1;
     }
 
     public void checkBlockCollision(Block block){

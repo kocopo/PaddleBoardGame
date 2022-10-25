@@ -3,6 +3,7 @@ package eu.kocka.game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 import space.earlygrey.shapedrawer.ShapeDrawer;
 
@@ -31,7 +32,13 @@ public class Paddle extends Rectangle {
     }
 
     public float normalize(float value){
-        return 1 - (value % (width / 2)) * (1 / (width / 2));
+        value = MathUtils.clamp(value, 0, width);
+        if(value <= (width / 2)){
+            return 1 - (value * (1 / (width / 2)));
+        }else{
+            return (value % (width / 2)) * (1 / (width / 2));
+        }
+
     }
 
     public void draw(ShapeDrawer drawer){
