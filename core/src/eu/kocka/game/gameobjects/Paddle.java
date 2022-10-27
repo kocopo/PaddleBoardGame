@@ -1,4 +1,4 @@
-package eu.kocka.game;
+package eu.kocka.game.gameobjects;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;

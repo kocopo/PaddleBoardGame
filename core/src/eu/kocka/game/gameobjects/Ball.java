@@ -1,11 +1,9 @@
-package eu.kocka.game;
+package eu.kocka.game.gameobjects;
 
-import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Intersector;
-import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 import space.earlygrey.shapedrawer.ShapeDrawer;
 
